@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EtiquetasController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -25,4 +26,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('categorias', CategoriaController::class);
+Route::resource('noticias', PostController::class);
 Route::resource('etiquetas', EtiquetasController::class);

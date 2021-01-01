@@ -12,11 +12,21 @@
             <ul class="navbar-nav mr-auto">
                 @guest
                 @else
-
+                    <li>
                         <a class="nav-link" href="{{route("categorias.index")}}" >Categorias</a>
+                    </li>
+
+                    <li>
                         <a class="nav-link" href="{{route("etiquetas.index")}}" >Etiquetas</a>
+                    </li>
 
+                    <li>
+                        <a class="nav-link" href="{{route("noticias.index")}}" >Lista de Noticias</a>
+                    </li>
 
+                    <li>
+                        <a class="nav-link" href="{{route("noticias.create")}}" >Criar Noticias</a>
+                    </li>
                 @endguest
 
             </ul>
@@ -45,7 +55,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right text-white navbar-dark bg-dark " aria-labelledby="navbarDropdown ">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            
+                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
