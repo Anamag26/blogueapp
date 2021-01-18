@@ -14,8 +14,8 @@ class CreateEtiquetasTable extends Migration
     public function up()
     {
         Schema::create('etiquetas', function (Blueprint $table) {
-            $table->id();
-            $table->string('etiqueta');
+            $table->bigIncrements('id');
+            $table->string('etiqueta',15);
             $table->timestamps();
         });
     }

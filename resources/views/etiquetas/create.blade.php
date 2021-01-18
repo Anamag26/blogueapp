@@ -22,9 +22,9 @@
                            <input type="text" class="form-control" id="etiquetas"
                            name="etiquetas" value ="{{old('etiquetas')}}"required>
 
-                           @error('etiquetas')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                           @foreach ($etiquetas as $etiqueta)
+                               <option value="{{$etiqueta->id}}">{{$etiqueta->etiqueta}}</option>
+                           @endforeach
 
                         </div>
                         <button type="submit" class="btn btn-primary">Gravar</button>

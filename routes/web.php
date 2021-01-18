@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\EtiquetasController;
 use App\Http\Controllers\PostController;
 
@@ -17,9 +18,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [InicioController::class, 'index'])->name('inicio');
 
 Auth::routes();
 

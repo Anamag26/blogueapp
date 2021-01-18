@@ -21,9 +21,10 @@ class CreatePostsTable extends Migration
             $table->string('imagem');
             $table->string('textolink');
             $table->string('link');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('categoria_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('categoria_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+            $table->unique('post_id', 'etiqueta_id');
 
         });
 

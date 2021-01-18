@@ -12,5 +12,7 @@ class etiquetas extends Model
         'etiquetas',
 
     ];
-
+    public function post(){
+        return $this->belongsToMany(post::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use App\Models\etiqueta;
 use App\Models\categorias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,8 @@ class PostController extends Controller
     public function create()
     {
         $categorias= categorias::orderby('categorianome')->get();
-        return view('noticias.create',compact('categorias'));
+        $etiquetas= etiqueta::orderby('etiqueta');
+        return view('noticias.create',compact('categorias','etiquetas'));
     }
 
     /**
@@ -66,6 +68,8 @@ class PostController extends Controller
             $posts->imagem=$imgnome; //guardar na base de dados
         }
         $posts->save();
+
+        $posts->etiquetas()->attach(request('etiquetas'));
         //preparar mensagem de feedback
         return redirect('/noticias')->with('status', 'Post criado com sucesso!');
         //Ridirecionar para o index das categorias com mensagem

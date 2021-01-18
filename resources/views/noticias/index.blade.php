@@ -17,6 +17,11 @@
                                 class="img-fluid">
                             @endif
                         </div> 
+                        
+                        @foreach ($posts->etiquetas as $etiqueta)
+                            <span class="badge badge-success">{{$etiquetas->etiqueta}}</span>
+                        @endforeach
+
                         <div class="col-md-8"> 
                             <div class="card-body">
                                 <h5 class="card-title">{{$posts->titulo}}</h5>

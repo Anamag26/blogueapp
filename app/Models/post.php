@@ -34,4 +34,8 @@ class post extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function etiquetas(){
+        return $this->belongsToMany(etiquetas::class);
+    }
 }
