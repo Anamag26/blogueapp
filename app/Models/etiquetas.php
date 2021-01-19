@@ -9,7 +9,7 @@ class etiquetas extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'etiquetas',
+        'etiqueta',
 
     ];
     public function post(){

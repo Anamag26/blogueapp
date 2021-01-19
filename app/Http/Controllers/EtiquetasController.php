@@ -26,7 +26,8 @@ class EtiquetasController extends Controller
      */
     public function create()
     {
-        return view('etiquetas.create');
+        $etiquetas = etiquetas::all();
+        return view('etiquetas.create',compact('etiquetas'));
     }
 
     /**
@@ -46,6 +47,7 @@ class EtiquetasController extends Controller
         $etiquetas= new etiquetas;
         $etiquetas->etiquetas=$data['etiquetas'];
         $etiquetas->save();
+
         //preparar mensagem de feedback
         return redirect('/etiquetas/create')->with('status', 'Etiqueta criada com sucesso');
         //Ridirecionar para o index das categorias com mensagem
